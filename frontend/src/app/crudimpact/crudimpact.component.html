@@ -1,0 +1,150 @@
+<!-- Container principal da página -->
+<div class="page-wrapper bg-blue p-t-25 p-b-25">
+  <!-- Container para conteúdo centralizado -->
+  <div class="wrapper wrapper--w1080">
+    <!-- Card sem borda -->
+    <div class="card border-0 card-2">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <!-- Logo da empresa -->
+        <img src="logo.png" class="logo-impact" alt="Logo">  
+        <!-- Título da seção -->
+        <h2 class="title">Client Registration</h2>
+        <!-- Formulário para registrar clientes -->
+        <form (ngSubmit)="saveClient()">
+          <!-- Campo de entrada para o nome -->
+          <div class="input-group">
+            <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name">
+          </div>
+          <!-- Linha com dois campos de entrada: telefone e CPF -->
+          <div class="row row-space">
+            <div class="col-2">
+              <div class="input-group">
+                <input type="text" [(ngModel)]="phone" name="phone" class="form-control" placeholder="Phone">
+                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="input-group">
+                <input type="text" [(ngModel)]="cpf" name="cpf" class="form-control" placeholder="CPF">
+              </div>
+            </div>
+          </div>
+          <!-- Campo de entrada para endereço -->
+          <div class="input-group">
+            <input type="text" [(ngModel)]="address" name="address" class="form-control" placeholder="Address">
+          </div>
+          <!-- Linha com três campos de entrada: CEP, número e complemento -->
+          <div class="row row-space">
+            <div class="col-3">
+              <div class="input-group">
+                <input type="text" [(ngModel)]="cep" name="cep" class="form-control" placeholder="CEP Address">
+                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+              </div>
+            </div>  
+            <div class="col-3">
+              <div class="input-group">
+                <input type="text" [(ngModel)]="number" name="Number" class="form-control" placeholder="Number Address">
+                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="input-group">
+                <input type="text" [(ngModel)]="complement" name="complement" class="form-control" placeholder="Complement Address">
+              </div>
+            </div>
+          </div>
+          <!-- Linha com campo de texto para descrição e data de início do contrato -->
+          <div class="row row-space">
+            <div class="col-6">
+              <div class="input-group">
+                <textarea [(ngModel)]="descricao" name="descricao" class="form-control" placeholder="Enter Description"></textarea>
+                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="input-group">
+                <input type="date" [(ngModel)]="dataInicioContrato" name="dataInicioContrato" class="form-control">
+              </div>
+            </div>
+          </div>
+          <!-- Linha com checkbox para status ativo -->
+          <div class="row row-space">
+            <div class="col-1">
+              <div class="input-group">
+                <label class="form-check-label" for="status">Active</label>
+                <input type="checkbox" [(ngModel)]="status" name="status" class="form-check-input" id="status">
+              </div>
+            </div>
+          </div>
+          <!-- Botão para submeter o formulário -->
+          <div class="p-t-30">
+            <button type="submit" class="btn btn--radius btn--green" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seção para listar clientes -->
+<div class="page-wrapper bg-blue p-t-25 p-b-50">
+  <div class="wrapper wrapper--w1080">
+    <div class="card border-0 card-2">
+      <div class="card-table">
+        <!-- Título da tabela -->
+        <h2 class="title">Client List</h2>
+        <!-- Tabela com lista de clientes -->
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Client</th>
+              <th>Phone</th>
+              <th>CPF</th>
+              <th>Registered</th>
+              <th>Start</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Iteração sobre o array de clientes -->
+            <tr *ngFor="let client of clientArray">
+              <!-- Coluna para imagem do cliente e nome -->
+              <td class="text-center-first-column">
+                <a href="#" (click)="setUpdate(client)">
+                  <img [src]="client.avatarUrl" class="avatar" />
+                  {{ client.nome }}
+                </a>
+              </td>
+              <!-- Coluna para informações do cliente -->
+              <td>
+                <span>Cep:</span> dasdasd<br>
+                <span>End:</span> {{ client.endereco.endereco }}, {{ client.endereco.numero }}, {{ client.endereco.complemento }}<br>
+                {{ client.descricao }}
+              </td>
+              <td>{{ client.telefone }}</td>
+              <td>{{ client.cpf }}</td>   
+              <td>{{ client.dataRegistro }}</td>                           
+              <td>{{ client.dataInicioContrato }}</td>
+              <!-- Coluna para status do cliente -->
+              <td [ngClass]="{'text-danger': !client.status, 'text-success': client.status}">
+                <span>&bull;</span> {{ client.status ? 'Active' : 'Inactive' }}
+              </td>
+              <!-- Coluna para ações -->
+              <td>
+                <a href="#" class="settings" (click)="setUpdate(client)" title="Edit" data-toggle="tooltip">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a href="#" class="delete" (click)="deleteClient(client)" title="Delete" data-toggle="tooltip">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
