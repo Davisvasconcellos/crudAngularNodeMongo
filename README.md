@@ -22,7 +22,7 @@ Descompacte o conteúdo da pasta em um diretório de sua escolha.
 
 1. Navegue até o diretório `backend`:
    ```bash
-   cd backed
+   cd backend
    
 2. Inicie o servidor Node.js:
    ```bash
@@ -114,3 +114,6 @@ Descompacte o conteúdo da pasta em um diretório de sua escolha.
 - Exemplo: http://localhost:8000/user/delete/:id
 - Método: DELETE
 - Substitua :id pelo ID do usuário que você deseja remover.
+
+#Video Preview
+- URL: https://youtu.be/Pi0MVgBK9II
