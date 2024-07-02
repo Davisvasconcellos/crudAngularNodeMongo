@@ -1,1 +1,116 @@
-'# CRUD Impact\n\nEste projeto Ç uma aplicaá∆o CRUD (Create, Read, Update, Delete) utilizando Node.js para o backend e Angular para o frontend, com MongoDB como banco de dados.\n\n## Requisitos\n\n- Node.js instalado\n- MongoDB instalado com um banco de dados `crud-impact` e uma coleá∆o `clients`\n\n## Instruá‰es\n\n### 1. Descompactar o Conte£do da Pasta\n\nDescompacte o conte£do da pasta em um diret¢rio de sua escolha.\n\n### 2. Estrutura do Projeto\n\n- **Backend**: Node.js\n- **Frontend**: Angular\n\n### 3. Iniciar o Servidor Backend\n\n1. Navegue atÇ o diret¢rio `backend`:\n   ```bash\n   cd backend\n   ```\n\n2. Inicie o servidor Node.js:\n   ```bash\n   node server.js\n   ```\n\n### 4. Iniciar o Frontend\n\n1. Navegue atÇ o diret¢rio `frontend`:\n   ```bash\n   cd frontend\n   ```\n\n2. Inicie o Angular:\n   ```bash\n   ng serve\n   ```\n\n## Endpoints das Rotas do Node\n\n### Listagem de Todos os Usu†rios (GET)\n\n- **Descriá∆o**: Utilizado para obter a lista de todos os usu†rios.\n- **URL**: `/user/getAll`\n- **Exemplo**: `http://localhost:8000/user/getAll`\n- **MÇtodo**: GET\n\n### Criaá∆o de um Novo Usu†rio (POST)\n\n- **Descriá∆o**: Utilizado para criar um novo usu†rio.\n- **URL**: `/user/create`\n- **Exemplo**: `http://localhost:8000/user/create`\n- **MÇtodo**: POST\n- **Body**:\n  ```json\n  {\n      "nome": "User Name",\n      "telefone": "1234567890",\n      "endereco": {\n          "cep": "12345-678",\n          "endereco": "Rua Exemplo",\n          "numero": "100",\n          "complemento": "Apt 101"\n      },\n      "cpf": "123.456.789-00",\n      "descricao": "Descriá∆o do usu†rio",\n      "dataRegistro": "2024-07-01T12:00:00Z",\n      "dataInicioContrato": "2024-08-01T00:00:00Z",\n      "status": true\n  }\n  ```\n\n### Atualizaá∆o de um Usu†rio Existente (PUT)\n\n- **Descriá∆o**: Utilizado para atualizar um usu†rio espec°fico, onde `:id` representa o identificador £nico do usu†rio no banco de dados.\n- **URL**: `/user/update/:id`\n- **Exemplo**: `http://localhost:8000/user/update/:id`\n- **MÇtodo**: PUT\n- **Body**:\n  ```json\n  {\n      "nome": "Updated User Name",\n      "telefone": "0987654321",\n      "endereco": {\n          "cep": "87654-321",\n          "endereco": "Rua Atualizada",\n          "numero": "200",\n          "complemento": "Apt 202"\n      },\n      "cpf": "987.654.321-00",\n      "descricao": "Descriá∆o do usu†rio atualizada",\n      "dataInicioContrato": "2024-09-01T00:00:00Z",\n      "status": false\n  }\n  ```\n\n### Remoá∆o de um Usu†rio Existente (DELETE)\n\n- **Descriá∆o**: Utilizado para excluir um usu†rio espec°fico, onde `:id` representa o identificador £nico do usu†rio no banco de dados.\n- **URL**: `/user/delete/:id`\n- **Exemplo**: `http://localhost:8000/user/delete/:id`\n- **MÇtodo**: DELETE\n\nSubstitua `:id` pelo ID do usu†rio que vocà deseja remover.' 
+# CRUD Impact
+
+Este projeto √© uma aplica√ß√£o CRUD (Create, Read, Update, Delete) utilizando Node.js para o backend e Angular para o frontend, com MongoDB como banco de dados.
+
+## Requisitos
+
+- Node.js instalado
+- MongoDB instalado com um banco de dados `crud-impact` e uma cole√ß√£o `clients`
+
+## Instru√ß√µes
+
+### 1. Descompactar o Conte√∫do da Pasta
+
+Descompacte o conte√∫do da pasta em um diret√≥rio de sua escolha.
+
+### 2. Estrutura do Projeto
+
+- **Backend**: Node.js
+- **Frontend**: Angular
+
+### 3. Iniciar o Servidor Backend
+
+1. Navegue at√© o diret√≥rio `backend`:
+   ```bash
+   cd backed
+   
+2. Inicie o servidor Node.js:
+   ```bash
+   node server.js
+
+2. Navegue at√© o diret√≥rio `frontend`:
+   ```bash
+   cd Frontend
+
+2. Inicie o Angular:
+   ```bash
+   ng serve
+
+### 3. Iniciar o Servidor Backend
+
+1. Navegue at√© o diret√≥rio `backend`:
+   ```bash
+   cd backed
+   
+2. Inicie o servidor Node.js:
+   ```bash
+   node server.js
+
+### 4. Iniciar o Frontend
+
+1. Navegue at√© o diret√≥rio `frontend`:
+   ```bash
+   cd Frontend
+
+2. Inicie o Angular:
+   ```bash
+   ng serve
+
+# Endpoints das Rotas do Node
+
+# Listagem de Todos os Usu√°rios (GET)
+- Descri√ß√£o: Utilizado para obter a lista de todos os usu√°rios.
+- URL: /user/getAll
+- Exemplo: http://localhost:8000/user/getAll
+- M√©todo: GET
+
+# Cria√ß√£o de um Novo Usu√°rio (POST)
+- Descri√ß√£o: Utilizado para criar um novo usu√°rio.
+- URL: /user/create
+- Exemplo: http://localhost:8000/user/create
+- M√©todo: POST
+   ```bash
+   {
+    "nome": "User Name",
+    "telefone": "1234567890",
+    "endereco": {
+        "cep": "12345-678",
+        "endereco": "Rua Exemplo",
+        "numero": "100",
+        "complemento": "Apt 101"
+    },
+    "cpf": "123.456.789-00",
+    "descricao": "Descri√ß√£o do usu√°rio",
+    "dataRegistro": "2024-07-01T12:00:00Z",
+    "dataInicioContrato": "2024-08-01T00:00:00Z",
+    "status": true
+    }
+
+# Atualiza√ß√£o de um Usu√°rio Existente (PUT)
+- Descri√ß√£o: Utilizado para atualizar um usu√°rio espec√≠fico, onde :id representa o identificador √∫nico do usu√°rio no banco de dados.
+- URL: /user/update/:id
+- Exemplo: http://localhost:8000/user/update/:id
+- M√©todo: PUT
+   ```bash
+  {
+      "nome": "Updated User Name",
+      "telefone": "0987654321",
+      "endereco": {
+          "cep": "87654-321",
+          "endereco": "Rua Atualizada",
+          "numero": "200",
+          "complemento": "Apt 202"
+      },
+      "cpf": "987.654.321-00",
+      "descricao": "Descri√ß√£o do usu√°rio atualizada",
+      "dataInicioContrato": "2024-09-01T00:00:00Z",
+      "status": false
+  }
+
+
+# Remo√ß√£o de um Usu√°rio Existente (DELETE)
+- Descri√ß√£o: Utilizado para excluir um usu√°rio espec√≠fico, onde :id representa o identificador √∫nico do usu√°rio no banco de dados.
+- URL: /user/delete/:id
+- Exemplo: http://localhost:8000/user/delete/:id
+- M√©todo: DELETE
+- Substitua :id pelo ID do usu√°rio que voc√™ deseja remover.
